@@ -12,6 +12,14 @@ test("if the string is empy it returns an empty string",()=>{
     expect(capitalize("")).toBe("");
 })
 
-test("works with an already capitalize string",()=>{
-    expect(capitalize("Already capitalized")).toBe("Already capitalized");
+test("keeps the rest of the word unchanged", () => {
+  expect(capitalize("wORD")).toBe("WORD");
+});
+
+test("works with a single-letter string", () => {
+  expect(capitalize("a")).toBe("A");
+});
+
+test("does not change an already capitalized word", () => {
+  expect(capitalize("Word")).toBe("Word");
 });
